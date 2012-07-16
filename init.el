@@ -48,6 +48,9 @@
 (global-set-key (kbd "s-o") 'ftf-find-file)
 (global-set-key (kbd "s-f") 'ftf-grepsource)
 
+# Remove trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
