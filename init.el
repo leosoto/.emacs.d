@@ -13,9 +13,9 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages 
-  '(starter-kit 
-    starter-kit-lisp 
+(defvar my-packages
+  '(starter-kit
+    starter-kit-lisp
     starter-kit-bindings
     starter-kit-ruby
     starter-kit-eshell
