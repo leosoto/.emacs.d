@@ -51,6 +51,13 @@
 ; Remove trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+; 2 tab-with for coffeescript
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  ;; CoffeeScript uses two spaces.
+  (make-local-variable 'tab-width)
+  (set 'tab-width 2))
+(add-hook 'coffee-mode-hook 'coffee-custom)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
