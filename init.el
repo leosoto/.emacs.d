@@ -13,9 +13,9 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages 
-  '(starter-kit 
-    starter-kit-lisp 
+(defvar my-packages
+  '(starter-kit
+    starter-kit-lisp
     starter-kit-bindings
     starter-kit-ruby
     starter-kit-eshell
@@ -48,9 +48,16 @@
 (global-set-key (kbd "s-o") 'ftf-find-file)
 (global-set-key (kbd "s-f") 'ftf-grepsource)
 
-# Remove trailing whitespace
+; Remove trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+; 2 tab-with for coffeescript
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  ;; CoffeeScript uses two spaces.
+  (make-local-variable 'tab-width)
+  (set 'tab-width 2))
+(add-hook 'coffee-mode-hook 'coffee-custom)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
