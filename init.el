@@ -5,7 +5,7 @@
 
 ;; fix the PATH variable
 (defun set-exec-path-from-shell-PATH ()
-  (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo $PATH'")))
+  (let ((path-from-shell (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'")))
   (setenv "PATH" path-from-shell)
   (setq exec-path (split-string path-from-shell path-separator))))
 (if window-system (set-exec-path-from-shell-PATH))
@@ -47,6 +47,9 @@
 (require 'find-things-fast)
 (global-set-key (kbd "s-o") 'ftf-find-file)
 (global-set-key (kbd "s-f") 'ftf-grepsource)
+
+# Remove trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
 (custom-set-variables
