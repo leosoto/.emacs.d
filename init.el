@@ -26,6 +26,7 @@
     pony-mode
     solarized-theme
     yaml-mode
+    haml-mode
     coffee-mode
     find-things-fast
     )
@@ -58,6 +59,18 @@
   (make-local-variable 'tab-width)
   (set 'tab-width 2))
 (add-hook 'coffee-mode-hook 'coffee-custom)
+
+; Ruby: Ident with just 2 spaces in method calls
+(setq ruby-deep-indent-paren nil)
+
+; Line numbers on the left
+(global-linum-mode t)
+
+; HAML
+(add-hook 'haml-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)
+            (define-key haml-mode-map "\C-m" 'newline-and-indent)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
