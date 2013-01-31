@@ -37,7 +37,7 @@
     (package-install p)))
 
 (load-theme 'solarized-dark t)
-(set-frame-font "Menlo-12")
+(set-frame-font "Menlo-14")
 (setq ns-right-alternate-modifier nil)
 
 (require 'yaml-mode)
